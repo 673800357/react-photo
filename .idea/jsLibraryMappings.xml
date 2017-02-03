@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{jQuery-2.0.0, node-DefinitelyTyped, react-DefinitelyTyped, react-dom-DefinitelyTyped, react-highlight-words-DefinitelyTyped}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
+    <excludedPredefinedLibrary name="react-photo/node_modules" />
   </component>
 </project>
