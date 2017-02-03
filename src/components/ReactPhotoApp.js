@@ -15,17 +15,26 @@ let datas=(function (getData) {
 function getRange(low,high) {
     return Math.ceil(Math.random()*(high-low)+low);
 }
+//获取一个随机的角度
+function getDeg() {
+    return ((Math.random()>0.5? '':'-')+ Math.ceil(Math.random()*40))
+}
 class Photo extends React.Component
 {
     render()
     {
         let styleobj={};
-        if (this.props.styles.isCenter) {
-            styleobj = this.props.styles.pos;
+        if (this.props.styles.pos)   styleobj = this.props.styles.pos;
+        if (this.props.styles.isCenter)
+            styleobj.zIndex=20;
             //console.log("center",styleobj)
-        }
+            else {
+            (['MozTransform', 'msTransform', 'WebkitTransform', 'transform']).forEach((value)=> {
+                styleobj[value] = 'rotate(' + this.props.styles.rotate + 'deg)';
+            });
+                    }
 
-        else styleobj=this.props.styles.pos;
+
         return (
             <figure className="img-figure" style={styleobj}>
                 <img src={this.props.data.imgURL}/>
@@ -69,7 +78,7 @@ class ReactPhotoApp extends React.Component
             }
         };
     }
-    componentDidMount()
+    componentDidMount()//计算范围
     {
      const stageDOM=React.findDOMNode(this.refs.stage),//取得stage的DOM
             stageW=stageDOM.scrollWidth,stageH=stageDOM.scrollHeight,
@@ -100,9 +109,9 @@ class ReactPhotoApp extends React.Component
         this.rearrange(0)
     }
 
+    //
 
-
-
+    //重新布局
     rearrange(centerIndex)
     {
      let imgsArrangeArr = this.state.imgsArrangeArr,//存剩余的图片
@@ -126,7 +135,8 @@ class ReactPhotoApp extends React.Component
             //将图片居中
         imgsArrangeCenterArr[0]={
          pos:centerPos,
-            isCenter:true
+            isCenter:true,
+            rotate:0
         };
 
         //上方的图片
@@ -140,7 +150,8 @@ class ReactPhotoApp extends React.Component
                     top:getRange(vPosRangeTopY[0],vPosRangeTopY[1]),
                     left:getRange(vPosRangeX[0],vPosRangeX[1])
                 },
-                isCenter:false
+                isCenter:false,
+                rotate:getDeg()
             }
         });
 
@@ -155,7 +166,8 @@ class ReactPhotoApp extends React.Component
                     top:getRange(hPosRangeY[0], hPosRangeY[1]),
                     left:getRange(rangex[0],rangex[1])
                 },
-                isCenter:false
+                isCenter:false,
+                rotate:getDeg()
             }
         });
         //将取出的上方图片放回去

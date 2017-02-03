@@ -21,11 +21,14 @@
       <file leaf-file-name="ReactPhotoApp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ReactPhotoApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="510">
+              <caret line="198" column="99" lean-forward="false" selection-start-line="198" selection-start-column="85" selection-end-line="198" selection-end-column="99" />
               <folding>
                 <element signature="e#34#58#0" expanded="true" />
-                <element signature="e#1117#1276#0" expanded="false" />
+                <element signature="e#1458#1617#0" expanded="false" />
+                <element signature="n#!!block;n#componentDidMount#0;n#ReactPhotoApp#0" expanded="false" />
+                <marker date="1486100729427" expanded="true" signature="6386:6558" ph="..." />
+                <marker date="1486100729427" expanded="true" signature="6428:6484" ph="..." />
               </folding>
             </state>
           </provider>
@@ -286,12 +289,12 @@
       <option name="presentableId" value="Default" />
       <updated>1486026802792</updated>
       <workItem from="1486029508847" duration="37000" />
-      <workItem from="1486029614761" duration="19682000" />
+      <workItem from="1486029614761" duration="22780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19719000" />
+    <option name="totallyTimeSpent" value="22817000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,11 +444,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ReactPhotoApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state relative-caret-position="510">
+          <caret line="198" column="99" lean-forward="false" selection-start-line="198" selection-start-column="85" selection-end-line="198" selection-end-column="99" />
           <folding>
             <element signature="e#34#58#0" expanded="true" />
-            <element signature="e#1117#1276#0" expanded="false" />
+            <element signature="e#1458#1617#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#ReactPhotoApp#0" expanded="false" />
+            <marker date="1486100729427" expanded="true" signature="6386:6558" ph="..." />
+            <marker date="1486100729427" expanded="true" signature="6428:6484" ph="..." />
           </folding>
         </state>
       </provider>
