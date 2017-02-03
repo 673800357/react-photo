@@ -1,9 +1,10 @@
-
 import React from 'react'
 // CSS
 import  'normalize.css';
 import '../styles/main.scss';
 import data from '../data/data.json'
+import Photo from './Photo'
+import  Control from './Control'
 //从json中读取图片的路径
 let datas=(function (getData) {
     getData.forEach((item)=>{
@@ -19,30 +20,7 @@ function getRange(low,high) {
 function getDeg() {
     return ((Math.random()>0.5? '':'-')+ Math.ceil(Math.random()*40))
 }
-class Photo extends React.Component
-{
-    render()
-    {
-        let styleobj={};
-        if (this.props.styles.pos)   styleobj = this.props.styles.pos;
-        if (this.props.styles.isCenter)
-            styleobj.zIndex=20;
-            //console.log("center",styleobj)
-            else {
-            (['MozTransform', 'msTransform', 'WebkitTransform', 'transform']).forEach((value)=> {
-                styleobj[value] = 'rotate(' + this.props.styles.rotate + 'deg)';
-            });
-                    }
 
-
-        return (
-            <figure className="img-figure" style={styleobj}>
-                <img src={this.props.data.imgURL}/>
-                <p className="img-figure-caption">{this.props.data.title}</p>
-            </figure>
-        )
-    }
-}
 
 class ReactPhotoApp extends React.Component
 {
@@ -81,30 +59,36 @@ class ReactPhotoApp extends React.Component
     componentDidMount()//计算范围
     {
      const stageDOM=React.findDOMNode(this.refs.stage),//取得stage的DOM
-            stageW=stageDOM.scrollWidth,stageH=stageDOM.scrollHeight,
+            stageW=stageDOM.scrollWidth,
+         stageH=stageDOM.scrollHeight,
+         halfStageW = Math.ceil(stageW / 2),
+         halfStageH = Math.ceil(stageH / 2),
+
          img=React.findDOMNode(this.refs.img0),//图片
-         imgH=img.scrollHeight,imgW=img.scrollWidth;
+         imgH=img.scrollHeight,imgW=img.scrollWidth,
+         halfImgW = Math.ceil(imgW / 2),
+         halfImgH = Math.ceil(imgH / 2);
 
         //居中的定位fanwei
         /*this.Constant.centerPos={
             left:(stageW-imgW)/2,
             top:(stageH-imgH)/2
         };*/
-        this.Constant.centerPos.left=(stageW-imgW)/2;
-        this.Constant.centerPos.top=(stageH-imgH)/2;
+        this.Constant.centerPos.left=halfStageW-halfImgW;
+        this.Constant.centerPos.top=halfStageH-halfImgH;
         //上方
-        this.Constant.vPosRange.x[0]=stageW/2-imgW;
-        this.Constant.vPosRange.x[1]=stageW/2;
-        this.Constant.vPosRange.topY[0]=0-imgH/2;
-        this.Constant.vPosRange.topY[1]=stageH/2-imgH/2*3;
+        this.Constant.vPosRange.x[0]=halfStageW-imgW;
+        this.Constant.vPosRange.x[1]=halfStageW;
+        this.Constant.vPosRange.topY[0]=-halfImgH;
+        this.Constant.vPosRange.topY[1]=halfStageH - halfImgH * 3;
 
         //z左右
-        this.Constant.hPosRange.leftSecX[0] = imgW/2;
-        this.Constant.hPosRange.leftSecX[1] = stageW/2 - imgW/2 * 3;
-        this.Constant.hPosRange.rightSecX[0] = stageW/2 + imgW/2;
-        this.Constant.hPosRange.rightSecX[1] = stageW - imgH/2;
-        this.Constant.hPosRange.y[0] = -imgH/2;
-        this.Constant.hPosRange.y[1] = stageH - imgH/2;
+        this.Constant.hPosRange.leftSecX[0] = -halfImgW;
+        this.Constant.hPosRange.leftSecX[1] = halfStageW - halfImgW * 3;
+        this.Constant.hPosRange.rightSecX[0] = halfStageW + halfImgW;
+        this.Constant.hPosRange.rightSecX[1] = stageW - halfImgW;
+        this.Constant.hPosRange.y[0] = -halfImgH;
+        this.Constant.hPosRange.y[1] = stageH - halfImgH;
 
         this.rearrange(0)
     }
@@ -112,6 +96,24 @@ class ReactPhotoApp extends React.Component
     //
 
     //重新布局
+    center(index)
+    {
+        return  ()=> {
+            this.rearrange(index);
+        };
+    }
+    //反转图片
+    inverse(index)
+    {
+        return  ()=> {
+            let imgsArrangeArr=this.state.imgsArrangeArr;
+            imgsArrangeArr[index].isInverse=!imgsArrangeArr[index].isInverse;
+            console.log("zhuan",imgsArrangeArr[index].isInverse)
+            this.setState({
+                imgsArrangeArr:imgsArrangeArr
+            })
+        }
+    }
     rearrange(centerIndex)
     {
      let imgsArrangeArr = this.state.imgsArrangeArr,//存剩余的图片
@@ -131,12 +133,13 @@ class ReactPhotoApp extends React.Component
          topImgSpliceIndex = 0,
         //取出居中的图片
         imgsArrangeCenterArr=imgsArrangeArr.splice(centerIndex,1);
-        console.log(centerPos);
+       //console.log(centerPos);
             //将图片居中
         imgsArrangeCenterArr[0]={
          pos:centerPos,
             isCenter:true,
-            rotate:0
+            rotate:0,
+            isInverse:false
         };
 
         //上方的图片
@@ -151,7 +154,8 @@ class ReactPhotoApp extends React.Component
                     left:getRange(vPosRangeX[0],vPosRangeX[1])
                 },
                 isCenter:false,
-                rotate:getDeg()
+                rotate:getDeg(),
+                isInverse:false
             }
         });
 
@@ -167,7 +171,8 @@ class ReactPhotoApp extends React.Component
                     left:getRange(rangex[0],rangex[1])
                 },
                 isCenter:false,
-                rotate:getDeg()
+                rotate:getDeg(),
+                isInverse:false
             }
         });
         //将取出的上方图片放回去
@@ -175,13 +180,13 @@ class ReactPhotoApp extends React.Component
            imgsArrangeArr.splice(topImgSpliceIndex,0,imgsArrangeTopArr);
        //console.log("top",imgsArrangeTopArr)
         //将开始取出的居中图片放回去
-        console.log("center",imgsArrangeCenterArr);
+        //console.log("center",imgsArrangeCenterArr);
         imgsArrangeArr.splice(centerIndex,0,imgsArrangeCenterArr[0]);
         this.setState({imgsArrangeArr:imgsArrangeArr});
     }
     render()
     {
-        let imgSources=[];
+        let imgSources=[],controlSource=[];
         datas.forEach((item,index)=>{
             if (!this.state.imgsArrangeArr[index])
             {
@@ -196,14 +201,18 @@ class ReactPhotoApp extends React.Component
                         isCenter: false
                     }
             }
-           imgSources.push(<Photo data={item} ref={`img${index}`} styles={this.state.imgsArrangeArr[index]} />)
+            controlSource.push(<Control center={this.center(index)} key={index} inverse={this.inverse(index)} styles={this.state.imgsArrangeArr[index]} />);
+           imgSources.push(<Photo key={index} center={this.center(index)} data={item} inverse={this.inverse(index)} ref={`img${index}`} styles={this.state.imgsArrangeArr[index]}  />)
         });
         return (
             <div className="stage" ref="stage">
+
                 <div className="img-sec">
                     {imgSources}
                 </div>
-                <div className="controller-nav"></div>
+                <div className="controller-nav">
+                    {controlSource}
+                </div>
             </div>
         )
     }

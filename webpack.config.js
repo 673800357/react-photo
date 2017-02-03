@@ -45,7 +45,12 @@ module.exports = {
         }, {
             test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/,
             loader: 'url-loader?limit=8192'
-        }]
+        },
+            {
+                test: /\.mp3$/,
+                loader: 'file-loader'
+            }
+        ]
     },
 
     plugins: [
