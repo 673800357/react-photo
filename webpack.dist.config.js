@@ -11,7 +11,7 @@ var webpack = require('webpack');
 module.exports = {
 
   output: {
-    publicPath: '/assets/',//服务器上
+    publicPath: 'assets/',//服务器上
     path: 'dist/assets/',
     filename: 'main.js'
   },
@@ -53,8 +53,14 @@ module.exports = {
       test: /\.scss/,
       loader: 'style-loader!css-loader!autoprefixer-loader?{browsers:["last 2 version"]!sass-loader?outputStyle=expanded'
     }, {
-      test: /\.(png|jpg|woff|woff2)$/,
+      test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/,
       loader: 'url-loader?limit=8192'
+    },{
+        test: /\.json$/,
+        loader: 'json-loader'
+    },{
+        test: /\.mp3$/,
+        loader: 'file-loader'
     }]
   }
 };

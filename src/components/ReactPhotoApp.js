@@ -5,10 +5,12 @@ import '../styles/main.scss';
 import data from '../data/data.json'
 import Photo from './Photo'
 import  Control from './Control'
+import '../styles/bootstrap/css/bootstrap.min.css'
 //从json中读取图片的路径
 let datas=(function (getData) {
     getData.forEach((item)=>{
-        item.imgURL=`../images/${item.fileName}`
+       /* item.imgURL=`../images/${item.fileName}`*/
+        item.imgURL=require(`../images/${item.fileName}`)
     });
     return getData;
 })(data);
@@ -108,7 +110,7 @@ class ReactPhotoApp extends React.Component
         return  ()=> {
             let imgsArrangeArr=this.state.imgsArrangeArr;
             imgsArrangeArr[index].isInverse=!imgsArrangeArr[index].isInverse;
-            console.log("zhuan",imgsArrangeArr[index].isInverse)
+           // console.log("zhuan",imgsArrangeArr[index].isInverse)
             this.setState({
                 imgsArrangeArr:imgsArrangeArr
             })
@@ -213,6 +215,9 @@ class ReactPhotoApp extends React.Component
                 <div className="controller-nav">
                     {controlSource}
                 </div>
+                <audio autoPlay="autoPlay">
+                    <source src={require('../images/naxienian.mp3')}/>
+                </audio>
             </div>
         )
     }

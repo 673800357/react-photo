@@ -1,4 +1,7 @@
-
+    @font-face {
+        font-family: "jiantou";
+        src:url("../fonts/jiantou.svg") format("svg")
+    }
     html,body
     {
         height:100%;
@@ -90,7 +93,7 @@
             @at-root {
                 .control
             {
-
+                color: white;
                 display: inline-block;
                 width: 25px;
                 height: 25px;
@@ -100,12 +103,15 @@
                 vertical-align: middle;
                 transform: scale(.5);
                 transition: transform .6s ease-in-out, background-color .3s;
+
             }
 
             .is-center
             {
                 background-color: #888;
                 transform: scale(1);
+                line-height:24.5px;
+
             }
                 .is-inverse
                 {

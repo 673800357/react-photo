@@ -26,9 +26,11 @@ export default class Control extends React.Component
 
     render()
     {
-        let controlClassName="control";
+        let controlClassName="control ";
         if (this.props.styles.isCenter)
-           controlClassName += " is-center";
+           controlClassName += "glyphicon glyphicon-share-alt is-center ";
+        if (this.props.styles.isInverse)
+            controlClassName += " is-inverse";
         return (
             <span className={controlClassName} onClick={this.change}></span>
         )
