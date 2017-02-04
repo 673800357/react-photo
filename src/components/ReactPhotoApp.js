@@ -132,7 +132,7 @@ class ReactPhotoApp extends React.Component
          vPosRangeX = vPosRange.x, //上侧的的x
          imgsArrangeTopArr = [],//放上方的图片
          topImgNum = Math.floor(Math.random() * 2),    // 取一个或者0个,上方图片
-         topImgSpliceIndex = 0,
+         topImgSpliceIndex = 0,k=imgsArrangeArr.length,
         //取出居中的图片
         imgsArrangeCenterArr=imgsArrangeArr.splice(centerIndex,1);
        //console.log(centerPos);
@@ -164,8 +164,9 @@ class ReactPhotoApp extends React.Component
         //左右的图片
         imgsArrangeArr.forEach((item,index)=>{
             let rangex;
-            if (index<imgsArrangeArr.length/2) rangex= hPosRangeLeftSecX;
-            else rangex=hPosRangeRightSecX;
+
+            if (index<k/2) { rangex= hPosRangeLeftSecX; console.log("xiao",index,rangex);}
+            else {rangex=hPosRangeRightSecX;console.log("da",index,rangex)}
             //为什么用item={}不行？
             imgsArrangeArr[index]={
                 pos:{

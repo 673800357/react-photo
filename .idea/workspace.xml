@@ -18,17 +18,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ReactPhotoApp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReactPhotoApp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ReactPhotoApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+            <state relative-caret-position="-70">
+              <caret line="181" column="50" lean-forward="true" selection-start-line="181" selection-start-column="50" selection-end-line="181" selection-end-column="50" />
               <folding>
                 <element signature="e#33#57#0" expanded="true" />
                 <element signature="e#876#1035#0" expanded="false" />
-                <marker date="1486192580065" expanded="true" signature="6834:7200" ph="..." />
-                <marker date="1486192580065" expanded="true" signature="6877:6933" ph="..." />
+                <marker date="1486195150591" expanded="true" signature="6908:7274" ph="..." />
+                <marker date="1486195150591" expanded="true" signature="6951:7007" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Control.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Control.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Control.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
@@ -82,11 +92,11 @@
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/webpack.dist.config.js" />
         <option value="$PROJECT_DIR$/src/data/data.json" />
-        <option value="$PROJECT_DIR$/src/components/ReactPhotoApp.js" />
         <option value="$PROJECT_DIR$/src/components/Control.js" />
-        <option value="$PROJECT_DIR$/src/styles/main.scss" />
         <option value="$PROJECT_DIR$/src/styles/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/dist/assets/main.js" />
+        <option value="$PROJECT_DIR$/src/styles/main.scss" />
+        <option value="$PROJECT_DIR$/src/components/ReactPhotoApp.js" />
       </list>
     </option>
   </component>
@@ -256,24 +266,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="react-photo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="react-photo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -370,12 +362,12 @@
       <option name="presentableId" value="Default" />
       <updated>1486026802792</updated>
       <workItem from="1486029508847" duration="37000" />
-      <workItem from="1486029614761" duration="46356000" />
+      <workItem from="1486029614761" duration="47997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46393000" />
+    <option name="totallyTimeSpent" value="48034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -513,27 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ReactPhotoApp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding>
-            <element signature="e#33#57#0" expanded="true" />
-            <element signature="e#876#1035#0" expanded="false" />
-            <marker date="1486192580065" expanded="true" signature="6834:7200" ph="..." />
-            <marker date="1486192580065" expanded="true" signature="6877:6933" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Photo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="42" column="51" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/bootstrap/css/bootstrap-theme.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -558,19 +529,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="110" column="39" lean-forward="false" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Control.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="30" column="61" lean-forward="false" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Photo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="42" column="51" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ReactPhotoApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-70">
+          <caret line="181" column="50" lean-forward="true" selection-start-line="181" selection-start-column="50" selection-end-line="181" selection-end-column="50" />
+          <folding>
+            <element signature="e#33#57#0" expanded="true" />
+            <element signature="e#876#1035#0" expanded="false" />
+            <marker date="1486195150591" expanded="true" signature="6908:7274" ph="..." />
+            <marker date="1486195150591" expanded="true" signature="6951:7007" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
